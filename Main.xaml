@@ -78,7 +78,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="// * **************************************************************************&#xD;&#xA;// Id Bot: ROC01KCM &#xD;&#xA;// Description: Extract Information from web page and put it to an Excel File &#xD;&#xA;// Author: Kevin Cruz Mejia &#xD;&#xA;// Version 1.0 &#xD;&#xA;// ****************************************************************************" DisplayName="Main" sap:VirtualizedContainerService.HintSize="556,2403" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="// * **************************************************************************&#xD;&#xA;// Id Bot: ROC01KCM &#xD;&#xA;// Description: Extract Information from web page and put it to an Excel File &#xD;&#xA;// Author: Kevin Cruz Mejia &#xD;&#xA;// Version 1.0 &#xD;&#xA;// ****************************************************************************" DisplayName="Main" sap:VirtualizedContainerService.HintSize="556,2527" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="StrAux" />
       <Variable x:TypeArguments="sd:DataTable" Name="DtTable" />
@@ -96,9 +96,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514,2209" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514,2333" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,1916" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,2040" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -146,6 +146,9 @@
               <OutArgument x:TypeArguments="x:String" x:Key="StrColumn2">
                 <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrSilver" />
               </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="StrColumn3">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrBronze" />
+              </OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -153,6 +156,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[StrCountry + StrGold +StrSilver +StrBronze]" />
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="// Create an Excel File with its sheet names" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CreateExcelFile.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="DtTable">
@@ -227,6 +231,9 @@
               </OutArgument>
               <OutArgument x:TypeArguments="x:String" x:Key="StrColumn2">
                 <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrSilver" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="StrColumn3">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrBronze" />
               </OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>

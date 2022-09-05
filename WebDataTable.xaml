@@ -6,6 +6,7 @@
     <x:Property Name="StrPais" Type="OutArgument(x:String)" />
     <x:Property Name="StrColumn1" Type="OutArgument(x:String)" />
     <x:Property Name="StrColumn2" Type="OutArgument(x:String)" />
+    <x:Property Name="StrColumn3" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -158,9 +159,6 @@
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="StrStoreSearch" />
                 <Variable x:TypeArguments="x:String" Name="StrNum" />
-                <Variable x:TypeArguments="x:String" Name="StrColumn1" />
-                <Variable x:TypeArguments="x:String" Name="StrColumn2" />
-                <Variable x:TypeArguments="x:String" Name="StrColumn3" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
