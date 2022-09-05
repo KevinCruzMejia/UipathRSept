@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1328,3008</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1217,3216</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -92,19 +92,19 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence Open Browser" sap:VirtualizedContainerService.HintSize="611,2943" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Sequence Open Browser" sap:VirtualizedContainerService.HintSize="611,3151" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Wikipedia, the free encyclopedia" sap:VirtualizedContainerService.HintSize="569,2851" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a1b609bf-f175-444f-8a5b-877b1842cd4c" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard WebDriverMode="{x:Null}" sap2010:Annotation.AnnotationText="// Open Web Page, search and extract table" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Wikipedia, the free encyclopedia" sap:VirtualizedContainerService.HintSize="569,3059" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a1b609bf-f175-444f-8a5b-877b1842cd4c" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="535,2635" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="535,2812" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -138,7 +138,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ayuda:Búsqueda'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="493,216" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="a1b609bf-f175-444f-8a5b-877b1842cd4c" Text="[StrSearch + &quot;[k(enter)]&quot;]" Version="V1">
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="// Enter the object to search" ClickBeforeMode="Single" DisplayName="Type Into 'Ayuda:Búsqueda'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="493,247" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="a1b609bf-f175-444f-8a5b-877b1842cd4c" Text="[StrSearch + &quot;[k(enter)]&quot;]" Version="V1">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://es.wikipedia.org/wiki/Especial:Buscar" DesignTimeRectangle="209, 263, 628, 32" ElementType="InputBox" FriendlyName="'INPUT ooui-php-1'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' class='oo-ui-inputWidget-input' aaname='Buscar en Wikipedia' /&gt;" Guid="a625a5c2-1623-4d4e-94a8-cd7b514a43c1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAngAAAAkCAYAAAAaREefAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK5SURBVHhe7d2xTdxwGMZhNoANYAOQMgBMwBjpkiIVEgVsAFQoaRiBEWCASBTQnQQj0NA7ek9n60uA8PcRUIyeR3oly/b1P9kct9IBAPChCDwAgA9mCLybu4du7/tt9+nzTzMzMzOb2Hb3r4fjIfC+nsy6b6ez3240MzMzs+ltCLz+BAAA01LjLhN4AAATV+MuE3gAABNX4y4TeAAAE1fjLhN4AAATV+Mue1Xg3d/fd4eHh93W1la3srIyX46Pj4/n1wAAeHs17rKlA+/8/LxbW1sbwu7P5VruWUY+DwBAmxp32VKBl3DrQ257e7u7uLiYP7HLcpxz/fWzs7PFp9oJPACAdjXustGBl4jrn9wdHBwszj6Wa7kn9459XSvwAADa1bjLRgdeH255SveS/kne30LwKQIPAKBdjbtsdOD10ZZXsS/JPa0xWAk8AIB2Ne6y0YGX+MpaXrvmnv7+MQQeAEC7GneZwAMAmLgad9nowFvmFe3m5ubiTBuBBwDQrsZdNjrwjo6O5gG2s7OzOPO8PgbzmTEEHgBAuxp32ejAy2vX1dXVeYTlVyye03/bNve2vM6tBB4AQLsad9nowIv6j47zJO/y8nIecVmOc66/vrGxIfAAAN5QjbtsqcCL/EJF/yTvqeXa+vr6/Di/Tzsm8vIZAADa1LjLlg68SLTlVWy+RNGHXY7zN3f9E73+2pjIE3gAAO1q3GWvCrwWy0SewAMAaFfjLnvzwIuxkSfwAADa1bjL3iXwokbeSz9dJvAAANrVuMveLfAikZe4u7q6WpwBAOC1atxl7xp4AAD8ezXuMoEHADBxNe4ygQcAMHE17jKBBwAwcTXuMoEHADBxNe6yIfC+nMy6b6ezRzeYmZmZ2bQ2BN7N3UO39+P2yZvMzMzM7P/e7v71cDwEHgAAH4PAAwD4ULruF2miPLtRUV27AAAAAElFTkSuQmCC" InformativeScreenshot="aab2e1d43725bbc535f3d6d6276cb183.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Buscar - Wikipedia, la enciclopedia libre' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -148,8 +148,13 @@
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <Sequence DisplayName="Sequence to select the option" sap:VirtualizedContainerService.HintSize="493,2104" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Sequence to select the option" sap:VirtualizedContainerService.HintSize="493,2250" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="StrStoreSearch" />
                 <Variable x:TypeArguments="x:String" Name="StrNum" />
@@ -162,17 +167,27 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ClickType="Double" DisplayName="Click 'Anexo:Medallero de'" sap:VirtualizedContainerService.HintSize="451,156" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a1b609bf-f175-444f-8a5b-877b1842cd4c" Version="V1">
+              <uix:NClick sap2010:Annotation.AnnotationText="// Click on the row that maches with the object to search" ClickType="Double" DisplayName="Click 'Anexo:Medallero de'" sap:VirtualizedContainerService.HintSize="451,198" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a1b609bf-f175-444f-8a5b-877b1842cd4c" Version="V1">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://es.wikipedia.org/w/index.php?search=Anexo%3AMedallero+de+los+Juegos+Ol%C3%ADmpicos+de+R%C3%ADo+de+Janeiro+2016&amp;title=Especial:Buscar&amp;profile=advanced&amp;fulltext=1&amp;ns0=1&amp;ns100=1&amp;ns104=1" DesignTimeRectangle="209, 458, 494, 17" ElementType="Text" FriendlyName="'Anexo:Medallero de'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul&amp;gt;li&amp;gt;div&amp;gt;a' parentid='mw-content-text' tag='A' /&gt;&quot;, StrSearch)]" FuzzySelectorArgument="&lt;webctrl aaname='' type='' parentid='mw-content-text' tag='A' class='' check:innerText='Anexo:Medallero de los Juegos Olímpicos de Río de Janeiro 2016' /&gt;" Guid="b0c7452a-52c6-4a0a-9cd0-935df17181c4" ImageBase64="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" InformativeScreenshot="f507735b4f2fc866d99b7ffe349f5015.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Resultados de la búsqueda para «Anexo:Medallero de los Juegos Olímpicos de Río de Janeiro 2016» - Wikipedia, la enciclopedia libre' /&gt;" SearchSteps="Selector, Image" Visibility="Interactive" />
                 </uix:NClick.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[DtMedallero]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Núm.' ReferenceIdx='0' Name='Núm.'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='País' ReferenceIdx='1' Name='País'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-2' ReferenceIdx='2' Name='Column-2'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-3' ReferenceIdx='3' Name='Column-3'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-4' ReferenceIdx='4' Name='Column-4'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Total' ReferenceIdx='5' Name='Total'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Núm.' attr='text' /&gt;&lt;column name='País' attr='text' /&gt;&lt;column name='Column-2' attr='text' /&gt;&lt;column name='Column-3' attr='text' /&gt;&lt;column name='Column-4' attr='text' /&gt;&lt;column name='Total' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="451,156" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="0" ScopeIdentifier="a1b609bf-f175-444f-8a5b-877b1842cd4c" Version="V1">
+              <uix:NExtractData sap2010:Annotation.AnnotationText="// Table Extraction" AppendResults="False" ContinueOnError="True" DataTable="[DtMedallero]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Núm.' ReferenceIdx='0' Name='Núm.'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='País' ReferenceIdx='1' Name='País'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-2' ReferenceIdx='2' Name='Column-2'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-3' ReferenceIdx='3' Name='Column-3'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-4' ReferenceIdx='4' Name='Column-4'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Total' ReferenceIdx='5' Name='Total'&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Núm.' attr='text' /&gt;&lt;column name='País' attr='text' /&gt;&lt;column name='Column-2' attr='text' /&gt;&lt;column name='Column-3' attr='text' /&gt;&lt;column name='Column-4' attr='text' /&gt;&lt;column name='Total' attr='text' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="451,187" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="0" ScopeIdentifier="a1b609bf-f175-444f-8a5b-877b1842cd4c" Version="V1">
                 <uix:NExtractData.Target>
                   <uix:TargetAnchorable DesignTimeRectangle="209, 530, 538, 2553" FriendlyName="'Núm.PaísTotal1 Estados'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;" Guid="4783dd4c-c564-4869-af43-ff9b9434bf51" InformativeScreenshot="8364d3a6ffc417e7106ad1ecd026a7dd.png" ScopeSelectorArgument="[String.Format(&quot;&lt;html app='chrome.exe' title='{0} - Wikipedia, la enciclopedia libre' /&gt;&quot;, StrSearch)]" SearchSteps="Selector" Visibility="Interactive" />
                 </uix:NExtractData.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </uix:NExtractData>
-              <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="451,1418" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+              <ui:IfElseIf sap2010:Annotation.AnnotationText="// It has two options to select the correct header, Rio or Londres " DisplayName="Else If" sap:VirtualizedContainerService.HintSize="451,1449" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
                 <ui:IfElseIf.ConditionBlocks>
                   <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                     <ui:IfElseIfBlock BlockType="If" Condition="[StrSearch.Contains(&quot;Anexo:Medallero de los Juegos Olímpicos de Río de Janeiro 2016&quot;)]">
@@ -283,10 +298,11 @@
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:IfElseIf>
-              <ui:FilterDataTable DataTable="[DtMedallero]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="451,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DtResult]" SelectColumnsMode="Keep">
+              <ui:FilterDataTable sap2010:Annotation.AnnotationText="// Conditions to filter the gold medal column, only if it has one or more medals, it keeps on the table" DataTable="[DtMedallero]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="451,202" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DtResult]" SelectColumnsMode="Keep">
                 <ui:FilterDataTable.Filters>
                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                     <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
@@ -315,6 +331,11 @@
                     <InArgument x:TypeArguments="x:String">[StrColumn3]</InArgument>
                   </scg:List>
                 </ui:FilterDataTable.SelectColumns>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
               </ui:FilterDataTable>
             </Sequence>
           </Sequence>
@@ -323,6 +344,11 @@
       <uix:NApplicationCard.TargetApp>
         <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVDhPpZMBDYQwDEVBBRIQgQKkIGEG5gALGMAGBjCAjO3yxv2lg+XChSU/t3bt7++/0OiEEOI/+Ladp1bwBK+ahfcE27bFYRiQE+d5TslxHHN8HEd6B9yXZYld16Wafd9PBTy0bRvXdU0ExH3fF4TkuAPIdM8rUGQfNAlS732RFzHIBKyCbH6VQwVQDBhk48JEHm3BNE1JhWLInXM5BgUBcvECc4ghgwDZxBBaL0BBAJDMFMjYlf3J0QjBtf5GwDRUaBX9Qxhs/RFuBADZ1mkmX80TqgTywOK6u8DnUCV5gtSsUyv4hbOraT5zNVPvKCo8XgAAAABJRU5ErkJggg==" InformativeScreenshot="0ab2487ac728cfc7dfdb0836ae2a4955.png" Selector="&lt;html app='chrome.exe' url='https://es.wikipedia.org/wiki/Wikipedia:Portada' /&gt;" Url="https://es.wikipedia.org/wiki/Wikipedia:Portada" />
       </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
   </Sequence>
 </Activity>

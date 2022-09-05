@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1328,816" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1328,816" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
       <x:String>System.Activities</x:String>
@@ -78,7 +78,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="476,1513" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="// * **************************************************************************&#xD;&#xA;// Id Bot: ROC01KCM &#xD;&#xA;// Description: Extract Information from web page and put it to an Excel File &#xD;&#xA;// Author: Kevin Cruz Mejia &#xD;&#xA;// Version 1.0 &#xD;&#xA;// ****************************************************************************" DisplayName="Main" sap:VirtualizedContainerService.HintSize="556,2403" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="StrAux" />
       <Variable x:TypeArguments="sd:DataTable" Name="DtTable" />
@@ -88,118 +88,246 @@
       <Variable x:TypeArguments="x:String" Name="StrBronze" />
       <Variable x:TypeArguments="x:String" Name="StrAnexo1" />
       <Variable x:TypeArguments="x:String" Name="StrAnexo2" />
+      <Variable x:TypeArguments="x:String" Name="StrExcelFileName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[StrAnexo1]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">Anexo:Medallero de los Juegos Olímpicos de Río de Janeiro 2016</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[StrAnexo2]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">Anexo:Medallero de los Juegos Olímpicos de Londres 2012</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WebDataTable.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="StrSearch">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrAnexo1" />
-        </InArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="DtMedallero" />
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="DtResult">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DtTable" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="StrPais">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrCountry" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="StrColumn1">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrGold" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="StrColumn2">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrSilver" />
-        </OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CreateExcelFile.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="DtTable">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DtTable" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="ExcelFileName">
-          <Literal x:TypeArguments="x:String">Medallero_Olimpico.xlsx</Literal>
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ExcelAddHeaders.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="s:String[]" x:Key="ArrHeaders">
-          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;País&quot;,&quot;Rio 2016&quot;}" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ExcelTableCreation.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="DtTableWeb">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DtTable" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="ColumnCountry">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrCountry" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="ColumnGold">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrGold" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="ColumnSilver">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrSilver" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="ColumnBronze">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrBronze" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="WebDataTable.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="StrSearch">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrAnexo2" />
-        </InArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="DtMedallero" />
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="DtResult">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DtTable" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="StrPais">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrCountry" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="StrColumn1">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrGold" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="StrColumn2">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrSilver" />
-        </OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ExcelAddHeaders.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="s:String[]" x:Key="ArrHeaders">
-          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Londres 2012&quot;,&quot;Comparativa&quot;}" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="ExcelConditions.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="DtTableWeb">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DtTable" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[Environment.CurrentDirectory + &quot;\Temp&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="Medallero_Olimpico.xlsx" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="514,2209" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,1916" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[StrAnexo1]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Anexo:Medallero de los Juegos Olímpicos de Río de Janeiro 2016</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[StrAnexo2]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Anexo:Medallero de los Juegos Olímpicos de Londres 2012</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[StrExcelFileName]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Medallero_Olimpico.xlsx</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="// WorkFlow sequence to extract a table from web page" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WebDataTable.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="StrSearch">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrAnexo1" />
+              </InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="DtMedallero" />
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="DtResult">
+                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DtTable" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="StrPais">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrCountry" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="StrColumn1">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrGold" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="StrColumn2">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrSilver" />
+              </OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="// Create an Excel File with its sheet names" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="CreateExcelFile.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="DtTable">
+                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DtTable" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ExcelFileName">
+                <Literal x:TypeArguments="x:String">Medallero_Olimpico.xlsx</Literal>
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="// Add headers in all spreadsheetnames to the Excel fille" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ExcelAddHeaders.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="s:String[]" x:Key="ArrHeaders">
+                <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;País&quot;,&quot;Rio 2016&quot;}" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="StrExcelFileName">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrExcelFileName" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="// Fiil the Excel File with the previous table information" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ExcelTableCreation.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="DtTableWeb">
+                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DtTable" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ColumnCountry">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrCountry" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ColumnGold">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrGold" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ColumnSilver">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrSilver" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="ColumnBronze">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrBronze" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="StrExcelFileName">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrExcelFileName" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="// WorkFlow sequence to extract a table from web page" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="WebDataTable.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="StrSearch">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrAnexo2" />
+              </InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="DtMedallero" />
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="DtResult">
+                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DtTable" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="StrPais">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrCountry" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="StrColumn1">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrGold" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="StrColumn2">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrSilver" />
+              </OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="// Add headers in all spreadsheetnames to the Excel fille" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ExcelAddHeaders.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="s:String[]" x:Key="ArrHeaders">
+                <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Londres 2012&quot;,&quot;Comparativa&quot;}" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="StrExcelFileName">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrExcelFileName" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="// Filter and put information in the Excel File in accordance with some conditions" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="ExcelConditions.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="DtTableWeb">
+                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DtTable" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="StrExcelFileName">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrExcelFileName" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" sap2010:Annotation.AnnotationText="// Move Report file to Temporal Folder" Destination="[Environment.CurrentDirectory + &quot;\Temp&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="Medallero_Olimpico.xlsx">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:MoveFile>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:NullReferenceException" sap:VirtualizedContainerService.HintSize="480,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:NullReferenceException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:NullReferenceException" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:ArgumentException" sap:VirtualizedContainerService.HintSize="480,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:ArgumentException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:ArgumentException" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="480,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="si:IOException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="480,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
   </Sequence>
 </Activity>
